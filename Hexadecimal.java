@@ -95,7 +95,7 @@ public class Hexadecimal {
 	    return "";
 	} 
 	else {
-	    return decToHexR(n/2) + (n % 2);
+	    return decToHexR(n/16) + HEXDIGITS.substring((n % 16) , (n % 16) + 1);
 	}
     }
 
@@ -115,7 +115,8 @@ public class Hexadecimal {
 	/****** YOUR IMPLEMENTATION HURRR ******/   
 	int ret = 0;
 	for (int c = 0  ; c < s.length() ; c++) {
-	    ret += Integer.parseInt(s.substring(c,c+1))*((int)(Math.pow(2,s.length() -1 -c)));
+	    int translate = HEXDIGITS.indexOf(s.substring(c,c+1));
+	    ret += translate*((int)(Math.pow(16,s.length() -1 -c))); 
 	}
 	return ret;
     }
@@ -210,10 +211,13 @@ public class Hexadecimal {
 	System.out.println( b1.compareTo(b4) ); //should be neg
 	System.out.println( b4.compareTo(b1) ); //should be pos
 
+	System.out.println("NEW TEST CASES");
+
 	System.out.println(decToHexR(28));
 	System.out.println(hexToDecR("11100"));
        	System.out.println(decToHex(28));
 	System.out.println(hexToDec("11100"));
+	System.out.println(hexToDec("10"));
 
     }//end main()
 
