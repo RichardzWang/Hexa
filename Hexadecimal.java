@@ -167,17 +167,14 @@ public class Hexadecimal {
       =============================================*/
     public int compareTo( Object other ) {
 	/****** YOUR IMPLEMENTATION HURRR ******/
-	try {
-	    if (_decNum == ((Hexadecimal) other)._decNum) {
-		return 0;
-	    } else if (_decNum < ((Hexadecimal) other)._decNum) {
-		return -1;
-	    } else {
-		return 1;
-	    }
-	}
-	catch(ClassCastException e){
+	if (!(other instanceof Hexadecimal))
 	    throw new ClassCastException("\ncompareTo() input not a Hexadecimal");
+	if (_decNum == ((Hexadecimal) other)._decNum) {
+	    return 0;
+	} else if (_decNum < ((Hexadecimal) other)._decNum) {
+	    return -1;
+	} else {
+	    return 1;
 	}
     }
 
