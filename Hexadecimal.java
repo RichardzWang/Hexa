@@ -95,11 +95,7 @@ public class Hexadecimal {
 	    return "";
 	} 
 	else {
-<<<<<<< HEAD
-	    return decToHexR(n/16) + HEXDIGITS.substring(n % 16, n % 16 + 1);
-=======
 	    return decToHexR(n/16) + HEXDIGITS.substring((n % 16) , (n % 16) + 1);
->>>>>>> 0ad157d8f1203bec8d1caf3fa27c74aa657d8b1b
 	}
     }
 
@@ -118,15 +114,9 @@ public class Hexadecimal {
     public static int hexToDec( String s ) {
 	/****** YOUR IMPLEMENTATION HURRR ******/   
 	int ret = 0;
-<<<<<<< HEAD
 	for (int c = 0 ; c < s.length() ; c++) {
 	    int translate = HEXDIGITS.indexOf(s.substring(c,c+1));
 	    ret += translate*((int)(Math.pow(16, s.length() -1 -c)));
-=======
-	for (int c = 0  ; c < s.length() ; c++) {
-	    int translate = HEXDIGITS.indexOf(s.substring(c,c+1));
-	    ret += translate*((int)(Math.pow(16,s.length() -1 -c))); 
->>>>>>> 0ad157d8f1203bec8d1caf3fa27c74aa657d8b1b
 	}
 	return ret;
     }
@@ -226,22 +216,11 @@ public class Hexadecimal {
 	System.out.println( b1.compareTo(b4) ); //should be neg
 	System.out.println( b4.compareTo(b1) ); //should be pos
 
-<<<<<<< HEAD
 	System.out.println("\nNEW TEST CASES");
-=======
-	System.out.println("NEW TEST CASES");
-
->>>>>>> 0ad157d8f1203bec8d1caf3fa27c74aa657d8b1b
 	System.out.println(decToHexR(28));
 	System.out.println(hexToDecR("1C"));
        	System.out.println(decToHex(28));
-<<<<<<< HEAD
 	System.out.println(hexToDec("1C"));
-	
-=======
-	System.out.println(hexToDec("11100"));
-	System.out.println(hexToDec("10"));
->>>>>>> 0ad157d8f1203bec8d1caf3fa27c74aa657d8b1b
 
     }//end main()
 
